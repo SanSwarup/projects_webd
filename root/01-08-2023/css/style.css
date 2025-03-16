@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Heading{
+    text-align: center;
+}
+
+
+.my-img{
+    height: 250px;
+    width: 250px;
+    position: relative;
+    left: 580px;
+    border-radius: 50%;
+    margin: 50px;
+}
+
+.content{
+    padding: 0px 100px;
+
+}
+.btn{
+    position: relative;
+    left: 580px;
+    padding: 10px 32px ;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 18px;
+    margin: 20px 0px;
+}
+.information,li{
+    font-size: 18px;
+    line-height: 25px;
+}
+h5{
+    font-size: 20px;
+}
+footer{
+    background-color: rgb(1, 1, 67);
+}
+.followup{
+    color: white;
+    text-align: right;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-right: 80px;
+}
+.logos{
+   position: relative;
+   left: 600px;
+    
+}

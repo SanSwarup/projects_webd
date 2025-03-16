@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Over Buttons</title>
+</head>
+<body>
+    <textarea name="text" id="text" cols="30" rows="10" onmouseover="this.value = 'Now the mouse is inside the textarea'" onmouseout="this.value = 'Now the mouse pointer ts out of the textarea'"></textarea>
+    <hr>
+    <p onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">This is a text. Hello World</p>
+
+    <img src="../img/download.jpeg" name="dehradun" height="300" width="400" alt="">
+    <h3>Change Images on hover</h3>
+    <li onmouseover="document.dehradun.src = '../img/download.jpeg'">Dehradun</li>
+    <li onmouseover="document.dehradun.src = '../img/download1.jpeg'">Dehradun Zoo</li>
+    <li onmouseover="document.dehradun.src = '../img/download2.jpeg'">Clock Tower</li>
+</body>
+</html>

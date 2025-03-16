@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h6>Select you favorite color using dropdown list.</h6>
+    <select name="" id="color" onchange="fun()">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="white">White</option>
+    </select>
+
+    <script>
+       function fun(){
+        var color = document.getElementById("color").value;
+        document.body.style.backgroundColor = color
+       }
+    </script>
+    
+</body>
+</html>

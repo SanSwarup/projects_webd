@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .calculator {
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff; 
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .calculator input[type="text"] {
+        width: 100%;
+        height: 50px;
+        font-size: 24px;
+        text-align: right;
+        margin-bottom: 10px;
+        border: none;
+        outline: none;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #e0e0e0; 
+        color: #333; 
+      }
+
+      .button-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      button {
+        width: 100%;
+        height: 60px;
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        background-color: #333; 
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #fff;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+          border-radius 0.2s ease-in-out;
+      }
+
+      .operator {
+        background-color: #fc8003; 
+        color: #fff;
+      }
+
+      .clear {
+        background-color: #fc8003;
+        color: #fff;
+      }
+
+      .equal {
+        background-color: #fc8003;;
+        color: #fff;
+      }
+
+      button:hover {
+        background-color: #222;
+      }
+
+      .circle {
+        background-color: #555; 
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" name="" id="result" placeholder="0" readonly />
+      <div class="button-row">
+        <button class="clear" onclick="clearInput()">C</button>
+        <button onclick="percentage()">%</button>
+        <button onclick="clearLastDigit()">&lt;-</button>
+        <button class="operator circle" onclick="operatorClick('÷')">÷</button>
+        <button onclick="numberClick('7')">7</button>
+        <button onclick="numberClick('8')">8</button>
+        <button onclick="numberClick('9')">9</button>
+        <button class="operator circle" onclick="operatorClick('×')">×</button>
+        <button onclick="numberClick('4')">4</button>
+        <button onclick="numberClick('5')">5</button>
+        <button onclick="numberClick('6')">6</button>
+        <button class="operator circle" onclick="operatorClick('-')">-</button>
+        <button onclick="numberClick('1')">1</button>
+        <button onclick="numberClick('2')">2</button>
+        <button onclick="numberClick('3')">3</button>
+        <button class="operator circle" onclick="operatorClick('+')">+</button>
+        <button onclick="numberClick('00')">00</button>
+        <button onclick="numberClick('0')">0</button>
+        <button onclick="decimal()">.</button>
+        <button class="equal" onclick="calculateResult()">=</button>
+
+      </div>
+    </div>
+    <script>
+      function numberClick(num) {
+        document.getElementById("result").value += num;
+      }
+
+      function operatorClick(op) {
+        num1 = document.getElementById("result").value;
+        document.getElementById("result").value = "";
+        choice = op;
+      }
+
+      function calculateResult() {
+        num2 = document.getElementById("result").value;
+        switch (choice) {
+          case '+':
+            document.getElementById("result").value = parseFloat(num1) + parseFloat(num2);
+            break;
+          case '-':
+            document.getElementById("result").value = parseFloat(num1) - parseFloat(num2);
+            break;
+          case '×':
+            document.getElementById("result").value = parseFloat(num1) * parseFloat(num2);
+            break;
+          case '÷':
+            if (parseFloat(num2) === 0) {
+              document.getElementById("result").value = "Error";
+            } else {
+              document.getElementById("result").value = parseFloat(num1) / parseFloat(num2);
+            }
+            break;
+          case '%':
+            document.getElementById("result").value = (parseFloat(num1) * parseFloat(num2)) / 100;
+            break;
+        }
+      }
+
+      function clearInput() {
+        document.getElementById("result").value = "";
+      }
+
+      function clearLastDigit() {
+        const currentInput = document.getElementById("result").value;
+        document.getElementById("result").value = currentInput.slice(0, -1);
+      }
+
+      function decimal() {
+        const currentInput = document.getElementById("result").value;
+        if (!currentInput.includes('.')) {
+          document.getElementById("result").value += '.';
+        }
+      }
+    </script>
+  </body>
+</html>

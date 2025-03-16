@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sounds</title>
+    <script>
+        function clap(){
+            var sound = document.getElementById("audio");
+            sound.play()
+        }
+
+        function laugh(){
+            var sound = document.getElementById("audio");
+            sound.src = "../audio/crowd-laughing.wav";
+            sound.play()
+        }
+        function cry(){
+            var sound = document.getElementById("audio");
+            sound.src = "../audio/cry-of-pain.wav";
+            sound.play()
+        }
+        function screem(){
+            var sound = document.getElementById("audio");
+            sound.src = "../audio/crowd-sound.wav";
+            sound.play()
+        }
+    </script>
+
+</head>
+<body>
+    <audio src="../audio/crowd-in-church.wav" id="audio"></audio>
+    <button onclick="clap()">Clap</button>
+    <button onclick="laugh()">Laugh</button>
+    <button onclick="cry()">Cry</button>
+    <button onclick="screem()">Screem</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function on(){
+            document.getElementById("img").src='../img/on.jpeg'
+        }
+        function off(){
+            document.getElementById("img").src='../img/off.jpeg'
+        }
+    </script>
+</head>
+<body>
+    <button onclick="on()" id="on">On</button>
+    <img src="../img/off.jpeg" alt="" id="img">
+    <button onclick="off()" id="off">Off</button>
+</body>
+</html>
